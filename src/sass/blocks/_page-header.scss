@@ -1,0 +1,26 @@
+// .page-header {
+//   grid-column: 7 / -7;
+// }
+
+// .page-header__title {
+//   margin: 0;
+
+//   text-shadow: 6px 6px 6px rgba(#000000, 0.3);
+
+//   font-size: 50px;
+//   line-height: 1em;
+//   text-align: center;
+//   text-transform: uppercase;
+//   letter-spacing: 5px;
+// }
+
+.page-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #0a0a0a;
+  box-shadow: 3px 3px 10px 0 rgba(#ffffff, 0.2);
+}

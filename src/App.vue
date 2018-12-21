@@ -1,29 +1,88 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<body id="app" class="page-wrapper">
+  <header class="page-header">
+    <router-menu class="menu-list--header" v-bind:menu-items="menuItems"/>
+  </header>
+
+  <transition
+    appear
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+    mode="out-in"
+  >
+    <router-view v-bind:key="key"/>
+  </transition>
+</body>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import 'animate.css';
+import 'nprogress/nprogress.css';
+
+export default {
+  name: 'app',
+
+  components: {
+    'router-menu': () => import('@/components/RouterMenu.vue')
+  },
+
+  data() {
+    return {
+      menuItems: [
+        {
+          href: '/',
+          text: 'Home'
+        },
+        {
+          href: '/portfolio',
+          text: 'Portfolio',
+          menuItems: [
+            {
+              href: '/portfolio/atlantida',
+              text: 'Atlantida'
+            },
+            {
+              href: '/portfolio/brume',
+              text: 'Brume'
+            },
+            {
+              href: '/portfolio/cakes',
+              text: 'Cakes'
+            },
+            {
+              href: '/portfolio/miushi',
+              text: 'Miushi'
+            },
+            {
+              href: '/portfolio/nerds',
+              text: 'Nerds'
+            },
+            {
+              href: '/portfolio/olimp',
+              text: 'Olimp'
+            },
+            {
+              href: '/portfolio/pex',
+              text: 'Pex'
+            },
+            {
+              href: '/portfolio/reen',
+              text: 'Reen'
+            }
+          ]
+        }
+      ]
+    };
+  },
+
+  computed: {
+    key() {
+      return this.$route.path;
     }
   }
-}
+};
+</script>
+
+<style lang="scss">
+@import './sass/style.scss';
 </style>

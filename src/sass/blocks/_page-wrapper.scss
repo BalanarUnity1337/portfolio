@@ -1,0 +1,30 @@
+.page-wrapper {
+  height: 100%;
+  margin: 0;
+
+  background-color: #000000;
+
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 18px;
+}
+
+html {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #444444;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #46e2a6;
+  }
+}
+
+::selection {
+  background-color: #46e2a6;
+}
