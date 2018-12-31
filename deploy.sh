@@ -9,7 +9,8 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
+git remote add origin https://github.com/BalanarUnity1337/BalanarUnity1337.github.io.git
 
-git push -f git@github.com:BalanrUnity1337/BalanrUnity1337.github.io.git master
+git push -u origin master
 
 cd -
